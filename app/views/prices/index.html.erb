@@ -1,0 +1,40 @@
+<h1>Listing prices</h1>
+
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Vendor</th>
+    <th>Vpart number</th>
+    <th>Quote price</th>
+    <th>Units</th>
+    <th>Quote info</th>
+    <th>Updated date</th>
+    <th>Expire date</th>
+    <th>Note</th>
+    <th></th>
+    <th><%= link_to image_tag("new.png"), new_price_path %></th>
+    <th></th>
+  </tr>
+
+<% @prices.each do |price| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td><%= price.product.description %></td>
+    <td><%= price.vendor.company_name %></td>
+    <td><%= price.vpart_number %></td>
+    <td><%= number_to_currency(price.quote_price) %></td>
+    <td><%= price.units %></td>
+    <td><%= price.quote_info %></td>
+    <td><%= price.updated_at.strftime("%Y-%b-%e") %></td>
+    <td><%= price.expire_date.strftime("%Y-%b-%e") %></td> <!-- if .now is past expire_date make red, maybe orange. -->
+    <td><%= price.note %></td>
+    <td><%= link_to image_tag("show.png"), price %></td>
+    <td><%= link_to image_tag("edit.png"), edit_price_path(price) %></td>
+    <td><%= link_to image_tag("delete.png"), price, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to image_tag("new.png"), new_price_path %>
+<%= link_to image_tag("home.png"), pages_home_path %>

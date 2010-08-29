@@ -1,0 +1,28 @@
+<h1>Listing categories</h1>
+
+<table>
+  <tr>
+  	<th>ID</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+    <th><%= link_to image_tag("new.png"), new_category_path %></th>
+    <th></th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  	<td><%= category.id %></td>
+    <td><%= category.title %></td>
+    <td><%= category.description %></td>
+    <td><%= link_to image_tag("show.png"), category %></td>
+    <td><%= link_to image_tag("edit.png"), edit_category_path(category) %></td>
+    <td><%= link_to image_tag("delete.png"), category, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to image_tag("new.png"), new_category_path %>
+<%= link_to image_tag("home.png"), pages_home_path %>

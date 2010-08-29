@@ -1,0 +1,50 @@
+<h1>Listing vendors</h1>
+
+<table>
+  <tr>
+    <th>Company name</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Website</th>
+    <th>Company phone</th>
+    <th>Company fax</th>
+    <th>Contact name</th>
+    <th>Contact phone</th>
+    <th>Contact email</th>
+    <th>Product lines</th>
+    <th>Note</th>
+    <th></th>
+    <th><%= link_to image_tag("new.png"), new_vendor_path %></th>
+    <th></th>
+  </tr>
+
+<% @vendors.each do |vendor| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td><%= vendor.company_name %></td>
+    <td><%= vendor.address1 %></td>
+    <td><%= vendor.address2 %></td>
+    <td><%= vendor.city %></td>
+    <td><%= vendor.state %></td>
+    <td><%= vendor.zip %></td>
+    <td><%= vendor.website %></td>
+    <td><%= vendor.company_phone %></td>
+    <td><%= vendor.company_fax %></td>
+    <td><%= vendor.contact_name %></td>
+    <td><%= vendor.contact_phone %></td>
+    <td><%= vendor.contact_email %></td>
+    <td><%= vendor.tags %></td>
+    <td><%= vendor.note %></td>
+    <td><%= link_to image_tag("show.png"), vendor %></td>
+    <td><%= link_to image_tag("edit.png"), edit_vendor_path(vendor) %></td>
+    <td><%= link_to image_tag("delete.png"), vendor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to image_tag("new.png"), new_vendor_path %>
+<%= link_to image_tag("home.png"), pages_home_path %>

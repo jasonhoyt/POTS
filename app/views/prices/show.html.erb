@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @price.product.description %>
+</p>
+
+<p>
+  <b>Vendor:</b>
+  <%= @price.vendor.company_name %>
+</p>
+
+<p>
+  <b>Vpart number:</b>
+  <%= @price.vpart_number %>
+</p>
+
+<p>
+  <b>Quote price:</b>
+  <%= number_to_currency( @price.quote_price) %>
+</p>
+
+<p>
+  <b>Units:</b>
+  <%= @price.units %>
+</p>
+
+<p>
+  <b>Quote info:</b>
+  <%= @price.quote_info %>
+</p>
+
+<p>
+  <b>Expire date:</b>
+  <%= @price.expire_date.strftime("%Y-%b-%e") %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @price.note %>
+</p>
+
+
+<%= link_to image_tag("edit.png"), edit_price_path(@price) %> |
+<%= link_to image_tag("back.png"), prices_path %>
