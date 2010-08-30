@@ -31,10 +31,12 @@
     <%= f.label :list_price %><br />
    $ <%= f.text_field :list_price %>
   </div>
-    <div class="field">
+  <div class="field">
+    <%= f.label :category %><br />
   	<%= f.select :category_id, Category.all.collect {|p| [ p.title, p.id ]} %>
   </div>
   <div class="field">
+  	<%= f.label :vendor %><br />
   	<%= f.select :vendor_id, Vendor.all.collect {|p| [ p.company_name, p.id ]} %>
   </div>
   <div class="field">

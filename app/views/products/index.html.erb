@@ -22,14 +22,14 @@
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
   	<td><%= product.id %></td>
     <td><%= product.description %></td>
-    <td><%= product.manufacturer %></td>
+    <td><%= truncate(product.manufacturer, :length => 25) %></td>
     <td><%= product.model_number %></td>
     <td><%= product.part_number %></td>
     <td><%= number_to_currency( product.list_price) %></td>
     <td><%= number_to_currency( 0.00 ) %></td>
     <td><%= product.category.title %></td>
-    <td><%= product.vendor.company_name %></td>
-    <td><%= product.note %></td>
+    <td><%= truncate(product.vendor.company_name, :length => 25) %></td>
+    <td><%= truncate(product.note, :length => 40) %></td>
     <td><%= product.obsolete == 0 ? "No" : "Yes" %></td>
     <td><%= link_to image_tag("show.png"), product %></td>
     <td><%= link_to image_tag("edit.png"), edit_product_path(product) %></td>
