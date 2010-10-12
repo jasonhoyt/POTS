@@ -6,7 +6,6 @@ class Product < ActiveRecord::Base
 	has_many :attachments
 	
 	validates :description, :category_id, :presence => true
-	
 	before_destroy :ensure_not_referenced_by_project_line_item
 	
 	def ensure_not_referenced_by_project_line_item
@@ -17,5 +16,5 @@ class Product < ActiveRecord::Base
 			return false
 		end
 	end
-			
+
 end

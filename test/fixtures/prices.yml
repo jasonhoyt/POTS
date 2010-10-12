@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  product_id: 1
+  vendor_id: 1
+  vpart_number: MyString
+  quote_price: 9.99
+  units: MyString
+  quote_info: MyString
+  expire_date: 2010-08-26 19:45:24
+  note: MyText
+
+two:
+  product_id: 1
+  vendor_id: 1
+  vpart_number: MyString
+  quote_price: 9.99
+  units: MyString
+  quote_info: MyString
+  expire_date: 2010-08-26 19:45:24
+  note: MyText

@@ -2,7 +2,7 @@ Pots::Application.routes.draw do
   get "display/index"
 
   get "pages/home"
-  
+
   get "pages/contact"
 
   get "pages/about"

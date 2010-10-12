@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  description: MyString
+  manufacturer: MyString
+  model_number: MyString
+  part_number: MyString
+  list_price: 9.99
+  category_id: 1
+  vendor_id: 1
+  note: MyText
+  obsolete: 1
+
+two:
+  description: MyString
+  manufacturer: MyString
+  model_number: MyString
+  part_number: MyString
+  list_price: 9.99
+  category_id: 1
+  vendor_id: 1
+  note: MyText
+  obsolete: 1

@@ -21,5 +21,5 @@ class ApplicationController < ActionController::Base
     session[:project_id] = project.id
   	project
   end
-  
+
 end

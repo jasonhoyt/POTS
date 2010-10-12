@@ -18,8 +18,8 @@ test:
 production:
   adapter: mysql
   database: pots_production
-  host: mysql.pots.myishi.com
-  user: jasonhoyt
+  host:
+  user:
   password: 
   
 	

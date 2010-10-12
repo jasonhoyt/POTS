@@ -40,6 +40,7 @@ class ProjectLineItemsController < ApplicationController
   # POST /project_line_items
   # POST /project_line_items.xml
   def create
+
   	@project = current_project
   	product = Product.find(params[:product_id])
   	puts "more here" 		# need to get it to +1 to qty if press 'plus' again.
