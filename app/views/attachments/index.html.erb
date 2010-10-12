@@ -1,0 +1,32 @@
+<h1>Listing attachments</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Product</th>
+    <th>Link</th>
+    <th>Tags</th>
+    <th>Note</th>
+    <th></th>
+    <th><%= link_to image_tag("new.png"), new_attachment_path %></th>
+    <th></th>
+  </tr>
+
+<% @attachments.each do |attachment| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td><%= attachment.title %></td>
+    <td><%= attachment.product_id %></td>
+    <td><%= attachment.link %></td>
+    <td><%= attachment.tags %></td>
+    <td><%= attachment.note %></td>
+    <td><%= link_to image_tag("show.png"), attachment %></td>
+    <td><%= link_to image_tag("edit.png"), edit_attachment_path(attachment) %></td>
+    <td><%= link_to image_tag("delete.png"), attachment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to image_tag("new.png"), new_attachment_path %>
+<%= link_to image_tag("home.png"), pages_home_path %>

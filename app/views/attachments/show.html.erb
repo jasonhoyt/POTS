@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @attachment.title %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%= @attachment.product_id %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @attachment.link %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @attachment.tags %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @attachment.note %>
+</p>
+
+
+<%= link_to image_tag("edit.png"), edit_attachment_path(@attachment) %> |
+<%= link_to image_tag("back.png"), attachments_path %>

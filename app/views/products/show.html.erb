@@ -1,0 +1,88 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Item:</b>
+  <%= @product.id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @product.description %>
+</p>
+
+<p>
+  <b>Manufacturer:</b>
+  <%= @product.manufacturer %>
+</p>
+
+<p>
+  <b>Model number:</b>
+  <%= @product.model_number %>
+</p>
+
+<p>
+  <b>Part number:</b>
+  <%= @product.part_number %>
+</p>
+
+<p>
+  <b>List price:</b>
+  <%= number_to_currency( @product.list_price) %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @product.category.title %>
+</p>
+
+<p>
+  <b>Quoted prices:</b>
+  <table>	
+  	<tr>
+  		<td>Vendor</td>
+  		<td>Vendor Part Number</td>
+  		<td>Quoted Price</td>
+  		<td>Updated</td>
+  		<td><%= image_tag("new.png") %></td>
+  	</tr>
+  <% pricing = @product.prices.find(:all, :order => 'updated_at DESC') %>
+  <% pricing.each do |price| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  	<td><%= price.vendor.company_name%></td>
+  	<td><%= price.vpart_number%></td>
+    <td><%= number_to_currency( price.quote_price ) %> <%= price.units%></td>
+    <td><%= price.updated_at.strftime("%Y-%b-%d") %></td>
+    <td><%= image_tag("edit.png") %></td>
+  </tr>
+<% end %>
+</table>
+</p>
+
+<p>
+  <b>Preferred vendor:</b>
+  <%= @product.vendor.company_name %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @product.note %>
+</p>
+
+<p>
+  <b>Obsolete:</b>
+  <%= @product.obsolete == 0 ? "No" : "Yes" %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @product.updated_at.strftime("%Y-%b-%d") %>
+</p>
+<%= link_to image_tag("back.png"), products_path %> |
+<%= link_to image_tag("edit.png"), edit_product_path(@product) %> |
+<%= link_to image_tag("delete.png"), @product, :confirm => 'Are you sure?', :method => :delete %>
+<br />
+<br />
+Manage Pricing<br />
+Manage Attachment<br />
+<br />
+  

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @project.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @project.description %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @project.location %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @project.note %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%= @project.completed %>
+</p>
+
+
+<%= link_to image_tag("edit.png"), edit_project_path(@project) %> |
+<%= link_to image_tag("back.png"), projects_path %>

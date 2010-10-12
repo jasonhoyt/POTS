@@ -1,0 +1,46 @@
+<h1>Products Listing</h1>
+
+<table class="pretty">
+  <tr>
+  	<th><%= sortable "id", "Item" %></th>
+    <th><%= sortable "description" %></th>
+    <th><%= sortable "manufacturer" %></th>
+    <th>Model number</th>
+    <th>Part number</th>
+    <th>List price</th>
+    <th>Quote price</th>
+    <th>Category</th>
+    <th>Vendor</th>
+    <th>Note</th>
+    <th>Obsolete</th>
+    <th>Add to Project</th>
+    <th>Add to Project</th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  	<td><%= product.id %></td>
+    <td><%= product.description %></td>
+    <td><%= truncate(product.manufacturer, :length => 15) %></td>
+    <td><%= product.model_number %></td>
+    <td><%= product.part_number %></td>
+    <td><%= number_to_currency( product.list_price) %></td>
+    <td><%= number_to_currency( 0.00 ) %></td>
+    <td><%= truncate(product.category.title, :length => 15) %></td>
+    <td><%= truncate(product.vendor.company_name, :length => 15) %></td>
+    <td><%= truncate(product.note, :length => 15) %></td>
+    <td><%= product.obsolete == 0 ? "No" : "Yes" %></td>
+    <td><center><%= link_to image_tag("new.png"), new_project_line_item_path %><center/></td>
+    <td><%= button_to 'Add to Project',project_line_items_path(:product_id => product) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to image_tag("new.png"), new_product_path %>
+<%= link_to image_tag("home.png"), pages_home_path %>
+
+<p>
+  <br/>
+</p>

@@ -1,0 +1,30 @@
+<h1>Vendors</h1>
+
+<%= link_to image_tag("home.png"), pages_home_path %>
+
+<table>
+  <tr>
+    <th>Company name</th>
+    <th>Contact name</th>
+    <th>Contact phone</th>
+    <th>Contact email</th>
+    <th>Product lines</th>
+    <th><%= link_to image_tag("new.png"), new_vendor_path %></th></th>
+  </tr>
+
+<% @vendors.each do |vendor| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td><%= vendor.company_name %></td>
+    <td><%= vendor.contact_name %></td>
+    <td><%= vendor.contact_phone %></td>
+    <td><%= vendor.contact_email %></td>
+    <td><%= vendor.tags %></td>
+    <td><%= link_to 'Show More...', vendor %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to image_tag("home.png"), pages_home_path %> |
+<%= link_to image_tag("new.png"), new_vendor_path %>

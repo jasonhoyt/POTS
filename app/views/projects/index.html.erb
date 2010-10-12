@@ -1,0 +1,34 @@
+<h1>Listing projects</h1>
+
+<table>
+  <tr>
+  	<th>ID</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Location</th>
+    <th>Note</th>
+    <th>Completed</th>
+    <th></th>
+    <th><%= link_to image_tag("new.png"), new_project_path %></th>
+    <th></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  	<td><%= project.id %></td>
+    <td><%= project.title %></td>
+    <td><%= project.description %></td>
+    <td><%= project.location %></td>
+    <td><%= project.note %></td>
+    <td><%= project.completed %></td>
+    <td><%= link_to image_tag("show.png"), project %></td>
+    <td><%= link_to image_tag("edit.png"), edit_project_path(project) %></td>
+    <td><%= link_to image_tag("delete.png"), project, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to image_tag("new.png"), new_project_path %>
+<%= link_to image_tag("home.png"), pages_home_path %>
