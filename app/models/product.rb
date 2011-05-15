@@ -9,7 +9,7 @@ class Product < ActiveRecord::Base
 	before_destroy :ensure_not_referenced_by_project_line_item
 	
 	def ensure_not_referenced_by_project_line_item
-		if project_line_items.count.zer?
+		if project_line_items.count.zero?
 			return true
 		else
 			error[:base] << "Product Line Items present"

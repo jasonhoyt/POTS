@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
   def current_project
   	Project.find(session[:project_id])
   rescue ActiveRecord::RecordNotFound
-  	puts "I'm here"
   	project = Project.find('1')   			# not correct, redirect to selecting project
   	# project = Project.find(params[:id])   # not correct
     session[:project_id] = project.id

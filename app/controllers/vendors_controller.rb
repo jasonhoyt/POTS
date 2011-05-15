@@ -1,8 +1,11 @@
 class VendorsController < ApplicationController
+	
+	helper_method :sort_column, :sort_direction
+	
   # GET /vendors
   # GET /vendors.xml
   def index
-    @vendors = Vendor.all
+    @vendors = Vendor.order(sort_column + " " + sort_direction) # tweaked
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +83,15 @@ class VendorsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+  
+  def sort_column
+    Vendor.column_names.include?(params[:sort]) ? params[:sort] : "company_name"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
 end

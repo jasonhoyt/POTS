@@ -1,10 +1,12 @@
 <h1>Listing categories</h1>
 
-<table>
+<%= link_to image_tag("home.png"), pages_home_path %>
+
+<table class="pretty">
   <tr>
   	<th><%= link_to image_tag("new.png"), new_category_path %></th>
-  	<th>ID</th>
-    <th>Title</th>
+  	<th><%= sortable "id", "ID" %></th>
+    <th><%= sortable "title" %></th>
     <th>Description</th>
     <th></th>
     <th></th>

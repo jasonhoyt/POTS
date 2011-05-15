@@ -1,8 +1,11 @@
 class CategoriesController < ApplicationController
+	
+	helper_method :sort_column, :sort_direction
+	
   # GET /categories
   # GET /categories.xml
   def index
-    @categories = Category.all
+    @categories = Category.order(sort_column + " " + sort_direction) # tweaked
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +83,15 @@ class CategoriesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+  
+  def sort_column
+    Product.column_names.include?(params[:sort]) ? params[:sort] : "title"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+  
 end
