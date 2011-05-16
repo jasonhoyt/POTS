@@ -13,7 +13,8 @@ group :development, :test do
   gem "sqlite3-ruby", :require => "sqlite3" 
 end 
 
-gem 'acts_as_tree'
+gem 'devise'
+gem 'ancestry'
 
 # Use unicorn as the web server
 # gem 'unicorn'

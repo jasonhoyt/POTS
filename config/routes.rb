@@ -1,4 +1,6 @@
 Pots::Application.routes.draw do
+  devise_for :users
+
   get "display/index"
 
   get "pages/home"
