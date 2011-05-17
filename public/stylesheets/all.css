@@ -1,0 +1,81 @@
+/*
+Jason Hoyt 
+
+font-family: monospace;
+*/
+
+body {
+	font-size: 14pt;
+	padding: 20px;
+}
+
+table {
+	font-family: sans-serif;
+	font-size: 10pt;
+	border-style: dotted;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse:collapse;
+
+}
+td, th {
+font-size: 10pt;
+border:1px solid #98bf21;
+padding:3px 7px 2px 7px;
+}
+
+tr.list_line_even th {
+font-size: 10pt;
+text-align:left;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#A7C942;
+color:#fff;
+}
+
+tr.list_line_odd td {
+color:#000;
+background-color:#EAF2D3;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+	color: green;
+}
+
+strong {
+	font-size: 25pt;
+	color: green;
+}
+
+h1 {
+	font-size: 25pt;
+}
+
+h2 {
+	font-size: 20pt;
+}
+
+em {
+	color: red;
+}
+
+img {
+	border: 0px;
+}
+
+.pretty th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.pretty th .asc {
+  background-image: url(/images/up_arrow.gif);
+}
+
+.pretty th .desc {
+  background-image: url(/images/down_arrow.gif);
+}
